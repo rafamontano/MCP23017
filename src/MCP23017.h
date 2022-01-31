@@ -163,6 +163,17 @@ public:
 	uint16_t read();
 
 	/**
+	 * Reads the pull-up resistor for a whole port. 
+	 * 
+	 * 1 = Enabled
+	 * 0 = Disabled
+	 * 
+	 * See "3.5.10 Port register".
+	 */
+
+	uint8_t readPullUpResistorOnPort(MCP23017Port port);
+
+	/**
 	 * Writes a single register value.
 	 */
 	void writeRegister(MCP23017Register reg, uint8_t value);

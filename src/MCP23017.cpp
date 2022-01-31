@@ -116,6 +116,11 @@ uint16_t MCP23017::read()
 	return a | b << 8;
 }
 
+uint8_t MCP23017::readPullUpResistorOnPort(MCP23017Port port)
+{
+	return readRegister(MCP23017Register::GPPU_A + port);
+}
+
 void MCP23017::writeRegister(MCP23017Register reg, uint8_t value)
 {
 	_bus->beginTransmission(_deviceAddr);
